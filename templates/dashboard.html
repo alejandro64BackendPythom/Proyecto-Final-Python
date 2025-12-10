@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel de explicación de uso de API</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
+</head>
+<body class="dashBody">
+    <div class="header">
+      <span class="header-bg">
+        <h1>Bienvenido, Usuario ({{ session.username  }})</h1>
+        <p>¡Acceso a la API RESTful de Productos concedido!</p>
+        <a href="/logout" class="logout-btn">Cerrar Sesión</a>
+      </span>
+    </div>
+
+    <div class="container">
+        <h2>Endpoints Disponibles (Protegidos)</h2>
+        <p>Debes usar la siguiente API-KEY: {{ session.api_key }}</p>
+        <p>Todas las rutas se acceden a través de la base <code>/api</code>.</p>
+
+        <ul class="endpoint-list">
+            <li class="endpoint-item get">
+                <span class="method get-m">GET</span>
+                <span class="path">/api/productos?api_key=INSERTE API-KEY AQUI</span>
+                <p><strong>Descripción:</strong> Recupera  listado  de productos. Los parámetros <code>page</code> y <code>per_page</code> son opcionales.</p>
+                <p><strong>Retorno:</strong> JSON con lista de productos y metadatos de paginación.</p>
+            </li>
+            <li class="endpoint-item put">
+                <span class="method put-m">PUT</span>
+                <span class="path">/api/productos/&lt;int:id&gt;?api_key=INSERTE API-KEY AQUI</span>
+                <p><strong>Descripción:</strong> Edita campos de un producto específico utilizando su ID.</p>
+                <p><strong>Retorno:</strong> JSON del objeto producto o 404 si no existe.</p>
+            </li>
+            <li class="endpoint-item post">
+                <span class="method post-m">POST</span>
+                <span class="path">/api/productos?api_key=INSERTE API-KEY AQUI</span>
+                <p><strong>Descripción:</strong> Crea un nuevo producto. Requiere un cuerpo JSON con <code>name</code>, <code>price</code> y opcionalmente <code>description</code>.</p>
+                <p><strong>Ejemplo JSON:</strong> <code>{"nombre": "Limon", "idOrigen": 2, "uMedida": "kg", "precio": 1000}</code></p>
+                <p><strong>Retorno:</strong> JSON confirmación producto mas datos ingresados (código 201).</p>
+            </li>
+            <li class="endpoint-item delete">
+                <span class="method delete-m">DELETE</span>
+                <span class="path">/api/productos/&lt;int:id&gt;?api_key=INSERTE API-KEY AQUI</span>
+                <p><strong>Descripción:</strong> Elimina un producto específico utilizando su ID.</p>
+                <p><strong>Retorno:</strong> JSON de confirmación o 404 si no existe.</p>
+            </li>
+        </ul>
+
+    </div>
+</body>
+</html>

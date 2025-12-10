@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.4;
+}
+
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f3f3f3;
+    overflow: hidden;
+    position: relative;
+}
+
+.background-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #0078d4, #00bcf2, #68217a, #e3008c);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.login-page .container.cajaLogin {
+    position: relative;
+    background: rgba(255, 255, 255, 0.6); 
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
+    backdrop-filter: blur(15px); 
+    border: 1px solid rgba(255, 255, 255, 0.3); 
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    z-index: 1; 
+    margin: 20px auto;
+}
+
+.login-page .titLogin { margin-top: 0; margin-bottom: 30px; color: transparent; font-weight: 600; }
+.login-page .titLogin span {
+    display: inline-block; color: #FFFFFF; font-size: 26px; line-height: 30px; font-family: sans-serif;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4), 0px 0px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-in-out;
+}
+
+.login-page .titLogin span:hover { transform: translateY(-2px) scale(1.1); }
+.login-page .sbTitLogin { color: #cc0000; font-weight: 500; text-align: center; background-color: #ffbebe; padding: 5px; border-radius: 5px; margin-bottom: 15px; }
+.login-page .txtLogin { padding: 0px 10px 15px 10px; color: #444; }
+.login-page .fmLogin { padding: 0; max-width: 100%; margin: 0px auto; }
+.login-page .input-group { position: relative; margin-bottom: 30px; text-align: left; }
+.login-page .fmLogin div label { position: absolute; top: 12px; left: 10px; color: #999; pointer-events: none; transition: 0.3s ease all; }
+.login-page #username, .login-page #password, .login-page .fmLogin input[type="text"], .login-page .fmLogin input[type="password"] {
+    width: 100%; padding: 12px 10px; background: #fff; border: 1px solid #ccc; border-radius: 5px; outline: none; color: #333; font-size: 16px; transition: border-color 0.3s;
+}
+
+.login-page .fmLogin input:focus { border-color: #0078d4; }
+.login-page .input-group input:focus ~ label, .login-page .input-group input:valid ~ label {
+    top: -10px; left: 8px; font-size: 12px; color: #0078d4; background-color: #fff; padding: 0 5px;
+}
+
+.login-page button.sendBtn { 
+    width: 100%; padding: 0; border: 0px none; border-radius: 20px; color: white; cursor: pointer; margin-top: 20px; 
+    box-shadow: 0 4px 10px rgba(0, 120, 212, 0.3); position: relative; overflow: hidden; background-color: transparent; 
+}
+.login-page button.sendBtn:hover { transition: all 0.4s ease-in-out; color: #ccc; cursor: pointer; box-shadow: 0px 2px 2px 1px rgba(0,0,0,0.4); }
+.login-page button.sendBtn span.button-bg {
+    display: block; padding: 10px 10px; line-height: 1.5; height: 100%; width: 100%;
+    background: linear-gradient(135deg, #0078d4, #00bcf2, #68217a, #e3008c);
+    background-size: 400% 400%; animation: gradientAnimation 15s ease infinite; transition: transform 0.3s ease;
+}
+.login-page button.sendBtn:hover span.button-bg { transform: scale(1.03); }
+
+.login-page .info-box {
+    position: fixed; top: 20px; right: 20px; background: rgba(0, 0, 0, 0.5); padding: 15px; border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); color: #fff; font-size: 14px; z-index: 10;
+}
+.login-page .info-box p { margin: 0; line-height: 1.4; }
+.login-page .info-box strong { font-weight: 600; }
+
+@media (max-width: 600px) {
+    .login-page .container.cajaLogin { padding: 30px 20px; }
+    .login-page .info-box { top: 10px; right: 10px; padding: 10px; font-size: 12px; }
+}
+
+.dashBody {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+    background-color: #f4f7f6;
+    background-image: url("static/img/Fondo.jpg")
+    
+}
+.header {
+    background-color: transparent;
+    color: white;
+    padding: 0;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    border-radius: 0 0 10px 10px;
+}
+
+.header-bg {
+    display: block;
+    padding: 20px;
+    height: 100%;
+    width: 100%;
+
+    background: linear-gradient(135deg, #0078d4, #00bcf2, #68217a, #e3008c);
+    background-size: 400% 400%;
+
+    animation: gradientAnimation 15s ease infinite;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.endpoint-list { list-style: none; padding: 0; }
+.endpoint-item { background: #ffffff; margin-bottom: 20px; padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-left: 5px solid; }
+.get { border-left-color: #28a745; }
+.put { border-left-color: #0078d4; }
+.post { border-left-color: #ffc107; }
+.delete { border-left-color: #dc3545; }
+.method { font-weight: bold; padding: 4px 8px; border-radius: 5px; color: white; display: inline-block; margin-right: 15px; font-size: 0.9em; }
+.method.get-m { background-color: #28a745; }
+.method.put-m { background-color: #0078d4; }
+.method.post-m { background-color: #ffc107; color: #333; }
+.method.delete-m { background-color: #dc3545; }
+.path { font-family: Consolas, monospace; background-color: #e9ecef; padding: 3px 8px; border-radius: 4px; font-size: 1.1em; color: #6c757d; }
+.logout-btn {
+    background-color: rgba(220, 53, 69, 0.5);
+    color: white;
+    padding: 10px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+.logout-btn:hover {
+background-color: rgba(220, 53, 69, 0.8);
+    transform: scale(1.05);
+}

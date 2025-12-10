@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
+
+    <link href="fonts.googleapis.com" rel="stylesheet"> 
+</head>
+<body class="login-page">
+
+    <div class="info-box">
+        <p><strong>Usuario:</strong> Lrios</p>
+        <p><strong>Contraseña:</strong> JK5765</p>
+    </div>
+
+    <div class="background-animation"></div>
+
+    <div class="container cajaLogin"> 
+
+        <h2 class="titLogin">
+            <span>B</span><span>i</span><span>e</span><span>n</span><span>v</span><span>e</span><span>n</span><span>i</span><span>d</span><span>o</span>
+        </h2>
+        
+        <p class="txtLogin">Introduzca sus credenciales</p>
+
+        {% if message %}
+            <h3 class="sbTitLogin">{{ message }}</h3>
+        {% endif %}
+
+        <form method="post" action="/login" class="fmLogin">
+
+            <div class="input-group">
+                <input type="text" id="username" name="username" required/>
+                <label for="username">Usuario:</label>
+            </div>
+            
+            <div class="input-group">
+                <input type="password" id="password" name="password" required/>
+                <label for="password">Clave:</label>
+            </div>
+
+            <button class="sendBtn" type="submit">
+                <span class="button-bg">Ingresar</span>
+            </button>
+        </form>
+    </div>
+</body>
+</html>
